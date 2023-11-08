@@ -436,13 +436,13 @@ int board_late_init(void)
 	env_set_hex("memory_addr", gd->ram_base);
 	env_set_hex("memory_size", gd->ram_size);
 
-	ret = uclass_get_device(UCLASS_VIDEO, 0, &dev);
-	if (ret)
-		return ret;
+	// ret = uclass_get_device(UCLASS_VIDEO, 0, &dev);
+	// if (ret)
+	// 	return ret;
 
-	ret = video_bmp_display(dev, (ulong)&bmp_logo_bitmap[0], BMP_ALIGN_CENTER, BMP_ALIGN_CENTER, true);
-	if (ret)
-		goto err;
+	// ret = video_bmp_display(dev, (ulong)&bmp_logo_bitmap[0], BMP_ALIGN_CENTER, BMP_ALIGN_CENTER, true);
+	// if (ret)
+	// 	goto err;
 
 err:
 	return 0;
