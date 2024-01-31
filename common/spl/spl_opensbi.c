@@ -49,6 +49,8 @@ void spl_invoke_opensbi(struct spl_image_info *spl_image)
 	ulong uboot_entry;
 	void (*opensbi_entry)(ulong hartid, ulong dtb, ulong info);
 
+	gd->arch.boot_hart = 0;
+
 	if (!spl_image->fdt_addr) {
 		pr_err("No device tree specified in SPL image\n");
 		hang();
